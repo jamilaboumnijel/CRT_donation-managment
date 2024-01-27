@@ -3,37 +3,43 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <div class=" isk-mx-auto isk-p-4 isk-container">
+        <h1 class=" isk-text-center isk-font-bold isk-text-4xl isk-mb-8">User Index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class=" isk-overflow-x-auto">
+            <table class=" isk-table-auto isk-shadow-md isk-rounded-lg isk-bg-white isk-w-full">
+                <thead class=" isk-text-gray-700 isk-bg-gray-200">
+                    <tr>
+                        <th class=" isk-py-2 isk-px-4">Id</th>
+                        <th class=" isk-py-2 isk-px-4">Username</th>
+                        <th class=" isk-py-2 isk-px-4">Roles</th>
+                        <th class=" isk-py-2 isk-px-4">Password</th>
+                        <th class=" isk-py-2 isk-px-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class=" isk-text-gray-600">
+                    {% for user in users %}
+                        <tr>
+                            <td class=" isk-py-2 isk-border isk-px-4">{{ user.id }}</td>
+                            <td class=" isk-py-2 isk-border isk-px-4">{{ user.username }}</td>
+                            <td class=" isk-border isk-py-2 isk-px-4">{{ user.roles ? user.roles|join(', ') : 'None' }}</td>
+                            <td class=" isk-py-2 isk-border isk-px-4">{{ user.password }}</td>
+                            <td class=" isk-py-2 isk-border isk-px-4">
+                                <a href="{{ path('app_user_show', {'id': user.id}) }}" class=" isk-text-blue-500 isk-hover:underline">Show</a>
+                                <a href="{{ path('app_user_edit', {'id': user.id}) }}" class=" isk-text-blue-500 isk-ml-2 isk-hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class=" isk-border isk-text-center isk-py-2 isk-px-4">No records found</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
+        <div class=" isk-mt-8 isk-justify-center isk-flex">
+            <a href="{{ path('app_user_new') }}" class=" isk-shadow-md isk-rounded-full isk-bg-blue-500 isk-ease-in-out isk-duration-300 isk-transition isk-text-white isk-font-bold isk-py-2 isk-px-6 isk-hover:bg-blue-600">Create New</a>
+        </div>
+    </div>
 {% endblock %}

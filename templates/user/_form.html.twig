@@ -1,4 +1,7 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+  <button type="submit" class="isk-rounded isk-bg-blue-500 isk-text-white isk-font-bold isk-py-2 isk-px-4 isk-hover:bg-blue-700 isk-focus:outline-none isk-focus:shadow-outline">
+    {{ button_label|default('Save') }}
+</button>
+
 {{ form_end(form) }}
