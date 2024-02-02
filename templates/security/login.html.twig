@@ -3,32 +3,21 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-
-<form class="px-8 pt-4 pb-8 mt-20 bg-gray-200 rounded shadow-md h-100" method="post">
+    {{ form_start(form) }}
     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData,'security') }}</div>
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
     {% if app.user %}
         <div>
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            You are logged in as {{ app.user.username }},
+            <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-    
-    <h1 class="p-6 font-bold text-center uppercase border-b-gray-100">Please sign in</h1>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="px-6 py-2 m-3 text-center bg-opacity-50 border-none shadow-lg outline-none rounded-3xl bg-slate-400 text-inherit placeholder-slate-200 backdrop-blur-md" autocomplete="username"  placeholder="Username" required ><br>
-    <div style="display:flex; align-items: center">
-    <input type="password" name="password" id="inputPassword" class="px-6 py-2 m-3 text-center bg-opacity-50 border-none shadow-lg outline-none rounded-3xl bg-slate-400 text-inherit placeholder-slate-200 backdrop-blur-md" autocomplete="current-password" type="password" placeholder=" ****************" required>
-     <svg x-show="show" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style=" margin-left:-50px; z-index: 9999;">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-    </div>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" style="padding-right: 30px;">
-
-    
-
-    <div class="flex justify-center">
-        <button class="px-10 py-2 text-black transition-colors duration-300 bg-red-600 shadow-xl rounded-3xl bg-opacity-70 backdrop-blur-md hover:bg-red-700 hover:text-white m-7" type="submit">Sign in</button>
-    </div>
-</form>
+    <h1>Please sign in</h1>
+    {{ form_row(form.username) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form._token) }}
+    <button type="submit">Sign in</button>
+    <a href="{{ path('app_user_new') }}">Sign up</a>
+    {{ form_end(form) }}
 {% endblock %}

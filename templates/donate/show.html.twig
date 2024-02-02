@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Donate{% endblock %}
+
+{% block body %}
+
+    <div class="isk-p-9 isk-rounded-xl isk-bg-zinc-200">
+    <div>
+        <h1  class="isk-flex isk-justify-center isk-text-3xl isk-font-bold isk-mb-9 isk-text-sky-800">Donate</h1>
+
+        
+            <table class="isk-table isk-max-w-md isk-items-center isk-border-neutral-950">
+                <tbody >
+                    <tr >
+                        <th>Id :</th>
+                        <td >{{ donate.id }}</td>
+                    </tr>
+                    <tr >
+                        <th >Type :</th>
+                        <td >{{ donate.type }}</td>
+                    </tr>
+                    <tr >
+                        <th >Created_At :</th>
+                        <td >{{ donate.createdAt ? donate.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr >
+                        <th >Created_By :</th>
+                        <td >{{ donate.createdBy }}</td>
+                    </tr>
+                    <tr >
+                        <th>Quantity :</th>
+                        <td >{{ donate.quantity }}</td>
+                    </tr>
+                    <tr >
+                        <th >Description :</th>
+                        <td>{{ donate.description }}</td>
+                    </tr>
+                    <tr >
+                        <th >Title :</th>
+                        <td>{{ donate.title }}</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+<div class="isk-flex isk-justify-center isk-mt-7">
+        
+            <a href="{{ path('app_donate_index') }}"  class="isk-ml-4 isk-mt-2 isk-text-gray-500 hover:isk-text-sky-700" >Back to List</a>
+            <button type="submit" class="isk-relative isk-inline-flex isk-items-center isk-justify-center isk-py-0.9 isk-mb-2 isk-me-2 isk-overflow-hidden isk-text-sm isk-font-medium isk-text-gray-900 isk-rounded-lg isk-group isk-bg-gradient-to-br isk-from-cyan-500 isk-to-blue-500 group-hover:isk-from-cyan-500 group-hover:isk-to-blue-500 hover:isk-text-white dark:isk-text-white focus:isk-ring-4 focus:isk-outline-none focus:isk-ring-cyan-200 dark:focus:isk-ring-cyan-800">
+           <span class="isk-relative isk-px-7 isk-py-2.5 isk-transition-all isk-ease-in isk-duration-75 isk-bg-white dark:isk-bg-gray-900 isk-rounded-md group-hover:isk-bg-opacity-0">
+            <a href="{{ path('app_donate_edit', {'id': donate.id}) }}">Edit</a></span>
+            </button>
+        
+            <span class="isk-px-7 isk-py-2.5 isk-transition-all isk-ease-in isk-duration-75 isk-bg-white dark:isk-bg-gray-900 isk-rounded-md group-hover:isk-bg-opacity-0 isk-relative isk-inline-flex isk-items-center isk-justify-center isk-py-0.9 isk-mb-2 isk-me-2 isk-overflow-hidden isk-text-sm isk-font-medium isk-text-gray-900  isk-group isk-bg-gradient-to-br isk-from-cyan-500 isk-to-blue-500 group-hover:isk-from-cyan-500 group-hover:isk-to-blue-500 hover:isk-text-white dark:isk-text-white focus:isk-ring-4 focus:isk-outline-none focus:isk-ring-cyan-200 dark:focus:isk-ring-cyan-800">
+            {{ include('donate/_delete_form.html.twig') }}
+            </span>
+            
+            </div>
+            </div>
+        </div>
+   
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Donate{% endblock %}
+
+{% block body %}
+     <div class="isk-p-9 isk-rounded-xl isk-bg-zinc-200">
+       <div>
+        <h1 class="isk-flex isk-justify-center isk-text-3xl isk-font-bold isk-mb-9 isk-text-sky-800">Create New Donate</h1>
+        
+             <form class="isk-max-w-md isk-items-center isk-border-neutral-950" action="{{ path('app_donate_index') }}" method="post">
+          {{ form_start(form) }}
+        <div>
+            {{ form_label(form.type, 'Type') }}
+            {{ form_widget(form.type) }}
+        </div>
+        <div>
+            {{ form_label(form.created_At, 'Created At') }}
+            {{ form_widget(form.created_At) }}
+        </div>
+        <div>
+            {{ form_label(form.created_By, 'Created By') }}
+            {{ form_widget(form.created_By) }}
+        </div>
+        <div>
+            {{ form_label(form.quantity, 'Quantity') }}
+            {{ form_widget(form.quantity) }}
+        </div>
+        <div>
+            {{ form_label(form.description, 'Description') }}
+            {{ form_widget(form.description) }}
+        </div>
+        <div>
+            {{ form_label(form.title, 'Title') }}
+            {{ form_widget(form.title) }}
+        </div>
+        <div class="isk-flex isk-justify-center isk-mt-7">
+              <button type="submit" class="isk-relative isk-inline-flex isk-items-center isk-justify-center isk-py-0.9 isk-mb-2 isk-me-2 isk-overflow-hidden isk-text-sm isk-font-medium isk-text-gray-900 isk-rounded-lg isk-group isk-bg-gradient-to-br isk-from-cyan-500 isk-to-blue-500 group-hover:isk-from-cyan-500 group-hover:isk-to-blue-500 hover:isk-text-white dark:isk-text-white focus:isk-ring-4 focus:isk-outline-none focus:isk-ring-cyan-200 dark:focus:isk-ring-cyan-800">
+                    <span class="isk-relative isk-px-7 isk-py-2.5 isk-transition-all isk-ease-in isk-duration-75 isk-bg-white dark:isk-bg-gray-900 isk-rounded-md group-hover:isk-bg-opacity-0">Save</span>
+                </button> 
+            <a href="{{ path('app_donate_index') }}"  class="isk-ml-4 isk-mt-2 isk-text-gray-500 hover:isk-text-sky-700">Back to List</a>    
+        </div>
+    
+        {{ form_end(form) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

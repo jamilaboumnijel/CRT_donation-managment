@@ -6,7 +6,8 @@ module.exports = {
   ],
   prefix: 'isk-',
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }
