@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Family index{% endblock %}
+
+{% block body %}
+    <div class=" isk-mx-auto isk-p-4 isk-container">
+        <h1 class=" isk-text-center isk-font-bold isk-text-4xl isk-mb-8">Family Index</h1>
+        <a class=" isk-flex isk-justify-end isk-text-xl isk-mb-5 isk-mr-3 isk-text-white" href="{{ path('app_family_new') }}">Create new</a>
+
+        <div class=" isk-overflow-x-auto">
+            <table class=" isk-table-auto isk-shadow-md isk-rounded-lg isk-bg-white isk-w-full">
+                <thead class=" isk-text-gray-700 isk-bg-gray-200">
+            <tr>
+                <th class=" isk-py-2 isk-px-4">Id</th>
+                <th class=" isk-py-2 isk-px-4">FamilyName</th>
+                <th class=" isk-py-2 isk-px-4">Adress</th>
+                <th class=" isk-py-2 isk-px-4">Phone</th>
+                <th class=" isk-py-2 isk-px-4">Composition</th>
+                <th class=" isk-py-2 isk-px-4">Accommodation</th>
+                <th class=" isk-py-2 isk-px-4">Father_Profession</th>
+                <th class=" isk-py-2 isk-px-4">Mother_Profession</th>
+                <th class=" isk-py-2 isk-px-4">Insurance</th>
+                <th class=" isk-py-2 isk-px-4">Health_Status</th>
+                <th class=" isk-py-2 isk-px-4">Actions</th>
+            </tr>
+        </thead>
+        <tbody class=" isk-text-gray-600">
+        {% for family in families %}
+            <tr>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.id }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.familyName }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.Adress }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.Phone }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.composition }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.Accommodation }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.FatherProfession }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.motherProfession }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.Insurance }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">{{ family.HealthStatus }}</td>
+                <td class=" isk-py-2 isk-border isk-px-4">
+                    <a href="{{ path('app_family_show', {'id': family.id}) }}"  class=" isk-text-blue-500 isk-hover:underline">show</a>
+                    <a href="{{ path('app_family_edit', {'id': family.id}) }}"  class=" isk-text-blue-500 isk-ml-2 isk-hover:underline">edit</a>
+                   <form method="post" action="{{ path('app_family_delete', {'id': family.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ family.id) }}">
+    <button>Delete</button>
+</form>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+

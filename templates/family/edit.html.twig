@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Family{% endblock %}
+
+{% block body %}
+<div class="isk-p-11 isk-rounded-xl isk-bg-zinc-200">
+    <div> 
+        <h1 class=" isk-flex isk-justify-center isk-text-3xl isk-font-bold isk-mb-9 isk-text-sky-800">Edit Family</h1>
+         
+        
+        <div>
+            {{ include('family/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('family/_delete_form.html.twig') }}
+        </div>
+
+        <div class="isk-flex isk-justify-end isk-mt-4">
+            <a href="{{ path('app_family_index') }}" class="isk-ml-4 isk-mt-2 isk-text-gray-500 hover:isk-text-sky-700">back to list</a>
+        </div>   
+    </div>
+</div>
+{% endblock %}

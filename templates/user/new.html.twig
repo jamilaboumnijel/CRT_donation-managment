@@ -3,12 +3,10 @@
 {% block title %}New User{% endblock %}
 
 {% block body %}
-<div class="flex justify-center">
-    <h1>Create new User</h1>
-    <div>
+<h1>Create new User</h1>
+<div>
     {{ include('user/_form.html.twig') }}
-
     <a class="text-blue-500" href="{{ path('app_user_index') }}">back to list</a>
-    </div>
+</div>
 {% endblock %}
 
