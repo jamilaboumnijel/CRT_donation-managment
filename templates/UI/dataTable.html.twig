@@ -1,0 +1,53 @@
+
+    <!-- /.card -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">View user management</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Postal Code</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr {% if user.blocked %}style="background-color: #fcd2d2" {% endif %}>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.roles | join(', ') }}</td>
+                        <td> {{ user.phone }}</td>
+                        <td>{{ user.gender }}</td>
+                        <td>{{ user.postalCode }}</td>
+                        <td>{{ user.country }}</td>
+                        <td>{{ user.state }}</td>
+                        <td>{{ user.address }}</td>
+                        <td class="dataTable-actions">
+{#                            <i class="far fa-edit" onclick="window.location='{{ path('admin_user_edit',{'id':user.id}) }}'"></i>  #}
+                            <i class="far fa-folder-open" onclick="window.location='{{ path('admin_user_show',{'id':user.id}) }}'"></i>
+                            {% if user.id is not same as(app.user.id)  %}
+                                <i class="fa fa-trash-alt" onclick="deleteUser('{{ path('admin_user_delete', {'id': user.id, '_token': csrf_token('delete' ~ user.id)}) }}')"></i>
+                                <i class="fa {% if user.blocked %} fa-lock-open {% else %} fa-lock {% endif %}" onclick="blockUser('{{ path('admin_user_block', {'id': user.id, '_token': csrf_token('block' ~ user.id)}) }}')"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
