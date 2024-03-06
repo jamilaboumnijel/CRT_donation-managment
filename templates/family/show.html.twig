@@ -1,84 +1,68 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseV1.html.twig' %}
 
-{% block title %}Family
-{% endblock %}
+{% block title %}Family{% endblock %}
+
 {% block body %}
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ family.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Family Name</th>
+                        <td>{{ family.familyName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>{{ family.adress }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{ family.phone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Composition</th>
+                        <td>{{ family.composition }}</td>
+                    </tr>
+                    <tr>
+                        <th>Accommodation</th>
+                        <td>{{ family.accommodation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Father Profession</th>
+                        <td>{{ family.fatherProfession }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mother Profession</th>
+                        <td>{{ family.motherProfession }}</td>
+                    </tr>
+                    <tr>
+                        <th>Insurance</th>
+                        <td>{{ family.insurance }}</td>
+                    </tr>
+                    <tr>
+                        <th>Health Status</th>
+                        <td>{{ family.healthStatus }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-	
-<table class="table-auto isk-border-white isk-border-2 isk-border-collapse isk-w-full isk-mb-4">
-    <tbody>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Id</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.id }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">FamilyName</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.familyName }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Address</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.Adress }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Phone</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.Phone }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Composition</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.composition }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Accommodation</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.Accommodation }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Father Profession</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.FatherProfession }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Mother Profession</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.motherProfession }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Insurance</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.Insurance }}</td>
-        </tr>
-        <tr>
-            <th class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">Health Status</th>
-            <td class="isk-border isk-border-gray-400 isk-px-3 isk-py-3">{{ family.HealthStatus }}</td>
-        </tr>
-    </tbody>
-</table>    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="btn-group">
+                <a href="{{ path('app_family_index') }}" class="btn btn-primary">Back to list</a>
+                <a href="{{ path('app_family_edit', {'id': family.id}) }}" class="btn btn-warning">Edit</a>
+                {{ include('family/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 
-	<div >
-		<a href="{{ path('app_family_index') }}" class="btn btn-blue mr-4">back to list</a>
-		<a href="{{ path('app_family_edit', {'id': family.id}) }}" class="btn btn-orange">edit</a>
-        {{ include('family/_delete_form.html.twig') }}
-	</div>
-
-	<style>
-		.btn {
-			display: inline-block;
-			padding: 0.5rem 1rem;
-			font-size: 1rem;
-			border-radius: 0.25rem;
-			cursor: pointer;
-			text-decoration: none;
-            margin:1rem;
-		}
-
-		.btn-blue {
-			background-color: #4a90e2;
-			color: #fff;
-		}
-		.btn-orange {
-			background-color: orange;
-			color: #fff;
-		}
-
-		.btn-blue:hover {
-			background-color: #357ae8;
-		}
-	</style>
 {% endblock %}

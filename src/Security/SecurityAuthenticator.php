@@ -36,7 +36,6 @@ class SecurityAuthenticator extends AbstractLoginFormAuthenticator
             new UserBadge($username),
             new PasswordCredentials($request->request->get('password', '')),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
                 new RememberMeBadge(),
             ]
         );
@@ -49,7 +48,7 @@ class SecurityAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('app_user_index'));
+        return new RedirectResponse($this->urlGenerator->generate('app_family_index'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

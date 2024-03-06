@@ -16,46 +16,45 @@ class FamilyType extends AbstractType
     {
         $builder
         ->add('familyName',TextType::class, [
-            'attr' => [
-                'class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => [ 'class' => ''  ]
+            'attr' => [],
+            'label_attr' => []
         ])
         
         ->add('adress', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg',],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('phone', IntegerType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ]) 
         ->add('composition', IntegerType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('Accommodation', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('Father_Profession', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('mother_Profession', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('Insurance', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ->add('Health_Status', TextType::class, [
-            'attr' => ['class' => 'isk-h-8 isk-w-full isk-px-3 isk-py-2.5 isk-text-sm isk-rounded-lg'],
-            'label_attr' => ['class' => '']
+            'attr' => [],
+            'label_attr' => []
         ])
         ;
     }
-
+    
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
