@@ -4,7 +4,6 @@ module.exports = {
     "./assets/**/*.js",
     "./templates/**/*.html.twig",
   ],
-  prefix: 'isk-',
   theme: {
     extend: {
     },

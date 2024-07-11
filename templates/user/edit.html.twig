@@ -3,14 +3,14 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <div class="isk-mx-auto isk-py-8 isk-px-4 isk-container">
-        <h1 class="isk-font-bold isk-text-3xl isk-mb-6">Edit User</h1>
+    <div class="mx-auto py-8 px-4 container">
+        <h1 class="font-bold text-3xl mb-6">Edit User</h1>
 
-        <div class="isk-shadow-md isk-rounded-lg isk-bg-white isk-mb-6 isk-p-6">
+        <div class="shadow-md rounded-lg bg-white mb-6 p-6">
             {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
         </div>
 
-        <a href="{{ path('app_user_index') }}" class="isk-text-blue-600 isk-mb-4 isk-block isk-hover:underline">Back to List</a>
+        <a href="{{ path('app_user_index') }}" class="text-blue-600 mb-4 block hover:underline">Back to List</a>
 
         {{ include('user/_delete_form.html.twig') }}
     </div>

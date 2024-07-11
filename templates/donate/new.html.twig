@@ -3,11 +3,10 @@
 {% block title %}New Donate{% endblock %}
 
 {% block body %}
-     <div class="isk-p-9 isk-rounded-xl isk-bg-zinc-200">
+     <div class="p-9 rounded-xl bg-zinc-200">
        <div>
-        <h1 class="isk-flex isk-justify-center isk-text-3xl isk-font-bold isk-mb-9 isk-text-sky-800">Create New Donate</h1>
-        
-             <form class="isk-max-w-md isk-items-center isk-border-neutral-950" action="{{ path('app_donate_index') }}" method="post">
+        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Create New Donate</span></h1>
+             <form class="max-w-md items-center border-neutral-950" action="{{ path('app_donate_index') }}" method="post">
           {{ form_start(form) }}
         <div>
             {{ form_label(form.type, 'Type') }}
@@ -33,11 +32,11 @@
             {{ form_label(form.title, 'Title') }}
             {{ form_widget(form.title) }}
         </div>
-        <div class="isk-flex isk-justify-center isk-mt-7">
-              <button type="submit" class="isk-relative isk-inline-flex isk-items-center isk-justify-center isk-py-0.9 isk-mb-2 isk-me-2 isk-overflow-hidden isk-text-sm isk-font-medium isk-text-gray-900 isk-rounded-lg isk-group isk-bg-gradient-to-br isk-from-cyan-500 isk-to-blue-500 group-hover:isk-from-cyan-500 group-hover:isk-to-blue-500 hover:isk-text-white dark:isk-text-white focus:isk-ring-4 focus:isk-outline-none focus:isk-ring-cyan-200 dark:focus:isk-ring-cyan-800">
-                    <span class="isk-relative isk-px-7 isk-py-2.5 isk-transition-all isk-ease-in isk-duration-75 isk-bg-white dark:isk-bg-gray-900 isk-rounded-md group-hover:isk-bg-opacity-0">Save</span>
+        <div class="flex justify-center mt-7">
+              <button type="submit" class="relative inline-flex items-center justify-center py-0.9 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                    <span class="relative px-7 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Save</span>
                 </button> 
-            <a href="{{ path('app_donate_index') }}"  class="isk-ml-4 isk-mt-2 isk-text-gray-500 hover:isk-text-sky-700">Back to List</a>    
+            <a href="{{ path('app_donate_index') }}"  class="ml-4 mt-2 text-gray-500 hover:text-sky-700">Back to List</a>    
         </div>
     
         {{ form_end(form) }}

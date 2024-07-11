@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><text y='1.2em' font-size='96'></text><text y='1.3em' x='0.2em' font-size='76' fill='%23fff'>sf</text></svg>">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -15,43 +16,43 @@
         {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
 </head>
-<body class="isk-from-sky-100 isk-via-blue-300 isk-to-sky-950 isk-bg-gradient-to-br">
+<body class="from-sky-100 via-blue-300 to-sky-950 bg-gradient-to-br">
 
-  <nav class="isk-shadow isk-bg-sky-900 isk-p-5 md:isk-flex md:isk-items-center md:isk-justify-between isk-z-10 ">
-    <div class="isk-justify-between isk-items-center isk-flex ">
-      <span class="isk-text-2xl isk-font-[Poppins] isk-cursor-pointer">
-      <div class="isk-bg-gray-300 isk-p-0.5 isk-rounded-full">
-        <img class="isk-h-12 isk-p-0 isk-inline isk-rounded-full"
+  <nav class="shadow bg-sky-900 p-5 md:flex md:items-center md:justify-between z-10 ">
+    <div class="justify-between items-center flex ">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+      <div class="bg-gray-300 p-0.5 rounded-full">
+        <img class="h-12 p-0 inline rounded-full"
           src="{{asset('image/CJS.png')}}">
         </div>
       </span>
 
-     <span class="isk-mx-2 isk-text-3xl isk-cursor-pointer isk-block md:isk-hidden">
+     <span class="mx-2 text-3xl cursor-pointer block md:hidden">
 
         <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
       </span>
     </div>
 
-    <ul class=" isk-text-white md:isk-flex md:isk-items-center md:isk-z-auto md:isk-static isk-absolute isk-w-full isk-left-0 md:isk-w-auto md:isk-py-0 isk-py-4 md:isk-pl-0 isk-pl-7 md:isk-opacity-100 isk-opacity-0 isk-top-[-400px] isk-transition-all isk-ease-in isk-duration-500 isk-z-10">
-      <li class="isk-my-6 isk-mx-4 md:isk-my-0">
-        <a href="#" class="isk-duration-500 isk-text-l hover:isk-text-gray-400">HOME</a>
+    <ul class=" text-white md:flex md:items-center md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 z-10">
+      <li class="my-6 mx-4 md:my-0">
+        <a href="#" class="duration-500 text-l hover:text-gray-400">HOME</a>
       </li>
-      <li class="isk-my-6 isk-mx-4 md:isk-my-0">
-        <a href="#" class="isk-duration-500 isk-text-l hover:isk-text-gray-400">donation</a>
+      <li class="my-6 mx-4 md:my-0">
+        <a href="#" class="duration-500 text-l hover:text-gray-400">donation</a>
       </li>
-      <li class="isk-my-6 isk-mx-4 md:isk-my-0">
-        <a href="#" class="isk-duration-500 isk-text-l hover:isk-text-gray-400">family</a>
+      <li class="my-6 mx-4 md:my-0">
+        <a href="#" class="duration-500 text-l hover:text-gray-400">family</a>
       </li>
-      <li class="isk-my-6 isk-mx-4 md:isk-my-0">
-        <a href="#" class="isk-duration-500 isk-text-l hover:isk-text-gray-400">about</a>
+      <li class="my-6 mx-4 md:my-0">
+        <a href="#" class="duration-500 text-l hover:text-gray-400">about</a>
       </li>
-      <li class="isk-my-6 isk-mx-4 md:isk-my-0">
-        <a href="#" class="isk-duration-500 isk-text-l hover:isk-text-gray-400">contact</a>
+      <li class="my-6 mx-4 md:my-0">
+        <a href="#" class="duration-500 text-l hover:text-gray-400">contact</a>
       </li>
       
       
 
-      <button class="isk-font-[Poppins] isk-duration-500 isk-px-6 isk-py-2 isk-mx-4 isk-text-center isk-bg-[#f7e2d1] isk-border-[#f7e2d1] isk-text-black isk-rounded-md hover:isk-bg-gray-500 hover:isk-text-white ">
+      <button class="font-[Poppins] duration-500 px-6 py-2 mx-4 text-center bg-[#f7e2d1] border-[#f7e2d1] text-black rounded-md hover:bg-gray-500 hover:text-white ">
         <div>
                 
                 <a href="{{ path('app_login') }}">Logout</a>
@@ -64,67 +65,67 @@
   <script>
     function Menu(e){
       let list = document.querySelector('ul');
-      e.name === 'menu' ? (e.name = "close",list.classList.add('isk-top-[80px]') , list.classList.add('isk-opacity-100')) :( e.name = "menu" ,list.classList.remove('isk-top-[80px]'),list.classList.remove('isk-opacity-100'))
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
     }
   </script>
-  <div  class="isk-flex isk-justify-center isk-mt-20 isk-mx-auto isk-px-5 isk-container ">
+  <div  class="flex justify-center mt-20 mx-auto px-5 container ">
 
      {% block body %}{% endblock %}
 </div>
 <br><br><br><br><br>
 <!-- Footer Start -->
-    <footer class=" isk-text-gray-900 isk-bg-sky-900 isk-relative">
-        <div class=" isk-mx-auto isk-px-6 isk-container">
-            <div class=" isk-grid-cols-12 isk-grid">
-                <div class=" isk-col-span-12">
-                    <div class=" isk-py-[60px] isk-px-0">
-                        <div class=" isk-grid md:isk-grid-cols-12  isk-grid-cols-1 isk-gap-[30px]">
-                            <div class="lg:isk-col-span-4 md:isk-col-span-12">
-                                <a href="#" class=" isk-text-[22px] focus:isk-outline-none">
-                                    <img class=" isk-h-24 isk-ml-40 isk-rounded-full"
+    <footer class=" text-gray-900 bg-sky-900 relative">
+        <div class=" mx-auto px-6 container">
+            <div class=" grid-cols-12 grid">
+                <div class=" col-span-12">
+                    <div class=" py-[60px] px-0">
+                        <div class=" grid md:grid-cols-12  grid-cols-1 gap-[30px]">
+                            <div class="lg:col-span-4 md:col-span-12">
+                                <a href="#" class=" text-[22px] focus:outline-none">
+                                    <img class=" h-24 ml-40 rounded-full"
                                          src="{{asset('image/CJS.png')}}">
                                 </a>
-                                <p class=" isk-text-gray-300 isk-mt-6">
+                                <p class=" text-gray-300 mt-6">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                     do eiusmod tempor incididunt ut labore et dolore magna
                                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <ul class=" isk-list-none isk-mt-6">
-                                    <li class=" isk-inline">
+                                <ul class=" list-none mt-6">
+                                    <li class=" inline">
                                         <a href=""
-                                            class="isk-rounded-md isk-font-semibold isk-tracking-wide isk-align-middle isk-transition isk-duration-500 isk-ease-in-out isk-p-1 isk-h-9 isk-w-9 isk-inline-flex isk-items-center isk-text-center isk-justify-center isk-text-sm isk-border hover:isk-border-yellow-600 hover: isk-bg-yellow-600">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class=" isk-h-4 isk-w-4 isk-fill-gray-300"
+                                            class="rounded-md font-semibold tracking-wide align-middle transition duration-500 ease-in-out p-1 h-9 w-9 inline-flex items-center text-center justify-center text-sm border hover:border-yellow-600 hover: bg-yellow-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4 fill-gray-300"
                                                 viewBox="0 0 24 24">
                                                 <path
                                                     d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                                             </svg>
                                         </a>
                                     </li>
-                                    <li class=" isk-inline">
+                                    <li class=" inline">
                                         <a href=""
-                                            class=" isk-font-semibold  isk-tracking-wide  isk-align-middle  isk-transition  isk-duration-500  isk-ease-in-out  isk-p-1  isk-h-9  isk-w-9  isk-inline-flex  isk-items-center  isk-text-center  isk-justify-center  isk-text-sm  isk-border !border-gray-800  isk-rounded-md hover:isk-border-yellow-600  hover:isk-bg-yellow-600 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class=" isk-h-4 isk-w-4 isk-fill-gray-300"
+                                            class=" font-semibold  tracking-wide  align-middle  transition  duration-500  ease-in-out  p-1  h-9  w-9  inline-flex  items-center  text-center  justify-center  text-sm  border !border-gray-800  rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4 fill-gray-300"
                                                 viewBox="0 0 24 24">
                                                 <path
                                                     d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                             </svg>
                                         </a>
                                     </li>
-                                    <li class=" isk-inline">
+                                    <li class=" inline">
                                         <a href=""
-                                            class=" isk-font-semibold  isk-tracking-wide  isk-align-middle  isk-transition  isk-duration-500  isk-ease-in-out  isk-p-1  isk-h-9  isk-w-9  isk-inline-flex  isk-items-center  isk-text-center  isk-justify-center  isk-text-sm  isk-border !border-gray-800  isk-rounded-md hover:isk-border-yellow-600  hover:isk-bg-yellow-600 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class=" isk-h-4 isk-w-4 isk-fill-gray-300"
+                                            class=" font-semibold  tracking-wide  align-middle  transition  duration-500  ease-in-out  p-1  h-9  w-9  inline-flex  items-center  text-center  justify-center  text-sm  border !border-gray-800  rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4 fill-gray-300"
                                                 viewBox="0 0 24 24">
                                                 <path
                                                     d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
                                             </svg>
                                         </a>
                                     </li>
-                                    <li class="isk-inline">
+                                    <li class="inline">
                                         <a href=""
-                                            class=" isk-font-semibold  isk-tracking-wide  isk-align-middle  isk-transition  isk-duration-500  isk-ease-in-out  isk-p-1  isk-h-9  isk-w-9  isk-inline-flex  isk-items-center  isk-text-center  isk-justify-center  isk-text-sm  isk-border !border-gray-800  isk-rounded-md hover:isk-border-yellow-600  hover:isk-bg-yellow-600">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class=" isk-h-4 isk-w-4 isk-fill-gray-300"
+                                            class=" font-semibold  tracking-wide  align-middle  transition  duration-500  ease-in-out  p-1  h-9  w-9  inline-flex  items-center  text-center  justify-center  text-sm  border !border-gray-800  rounded-md hover:border-yellow-600  hover:bg-yellow-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4 fill-gray-300"
                                                 viewBox="0 0 24 24">
                                                 <path
                                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -136,81 +137,81 @@
                             </div>
                             <!--end col-->
 
-                            <div class="lg:isk-col-span-2 md:isk-col-span-4">
-                                <h5 class=" isk-tracking-[1px]  isk-text-gray-100  isk-font-semibold">
+                            <div class="lg:col-span-2 md:col-span-4">
+                                <h5 class=" tracking-[1px]  text-gray-100  font-semibold">
                                     Company
                                 </h5>
-                                <ul class="isk-list-none isk-mt-6">
+                                <ul class="list-none mt-6">
                                     <li>
                                         <a href="#"
-                                            class="isk-ease-in-out isk-duration-500 isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="ease-in-out duration-500 transition-all text-gray-300 hover:text-gray-400">
                                             About us</a>
                                     </li>
-                                    <li class=" isk-mt-[10px]">
+                                    <li class=" mt-[10px]">
                                         <a href="#"
-                                            class="isk-ease-in-out isk-duration-500 isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="ease-in-out duration-500 transition-all text-gray-300 hover:text-gray-400">
                                             Services</a>
                                     </li>
                                     <li class="mt-[10px]">
                                         <a href="#"
-                                            class="isk-ease-in-out isk-duration-500 isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="ease-in-out duration-500 transition-all text-gray-300 hover:text-gray-400">
                                             Pricing</a>
                                     </li>
-                                    <li class="isk-mt-[10px]">
+                                    <li class="mt-[10px]">
                                         <a href="#"
-                                            class=" isk-ease-in-out isk-duration-500 isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class=" ease-in-out duration-500 transition-all text-gray-300 hover:text-gray-400">
                                             Blog</a>
                                     </li>
                                 </ul>
                             </div>
                             <!--end col-->
 
-                            <div class="lg:isk-col-span-3 md:isk-col-span-4">
+                            <div class="lg:col-span-3 md:col-span-4">
                                 <h5 class="tracking-[1px] text-gray-100 font-semibold">
                                     Important Links
                                 </h5>
-                                <ul class=" isk-list-none isk-mt-6">
+                                <ul class=" list-none mt-6">
                                     <li>
                                         <a href="#"
-                                            class="duration-500 ease-in-out isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="duration-500 ease-in-out transition-all text-gray-300 hover:text-gray-400">
                                             Terms of Services</a>
                                     </li>
-                                    <li class="isk-mt-[10px]">
+                                    <li class="mt-[10px]">
                                         <a href="#"
-                                            class="duration-500 ease-in-out isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="duration-500 ease-in-out transition-all text-gray-300 hover:text-gray-400">
                                             Privacy Policy</a>
                                     </li>
-                                    <li class="isk-mt-[10px]">
+                                    <li class="mt-[10px]">
                                         <a href="#"
-                                            class="duration-500 ease-in-out isk-transition-all isk-text-gray-300 hover:isk-text-gray-400">
+                                            class="duration-500 ease-in-out transition-all text-gray-300 hover:text-gray-400">
                                             Documentation</a>
                                     </li>
                                 </ul>
                             </div>
                             <!--end col-->
 
-                            <div class="lg:isk-col-span-3 md:isk-col-span-4">
-                                <h5 class="isk-tracking-[1px] isk-text-gray-100 isk-font-semibold">
+                            <div class="lg:col-span-3 md:col-span-4">
+                                <h5 class="tracking-[1px] text-gray-100 font-semibold">
                                     Newsletter
                                 </h5>
-                                <p class="isk-mt-6">
+                                <p class="mt-6">
                                     Sign up and receive the latest tips via email.
                                 </p>
                                 <form>
-                                    <div class="isk-grid-cols-1 isk-grid">
-                                        <div class="isk-my-3 ">
-                                            <label class="isk-form-label">Write your email
-                                                <span class="isk-text-red-600">*</span></label>
-                                            <div class="mt-2 isk-relative">
+                                    <div class="grid-cols-1 grid">
+                                        <div class="my-3 ">
+                                            <label class="form-label">Write your email
+                                                <span class="text-red-600">*</span></label>
+                                            <div class="mt-2 relative">
 
                                                 <input type="email"
-                                                    class="isk-outline-none isk-rounded-r-none isk-rounded-l-sm isk-rounded-b-none isk-rounded-t-sm isk-rounded isk-border isk-bg-transparent isk-text-gray-100 isk-py-2 isk-px-3 isk-h-10 isk-w-full isk-outline-0 isk-border-gray-800/90 focus:isk-shadow-none focus:isk-border-gray-800/90"
+                                                    class="outline-none rounded-r-none rounded-l-sm rounded-b-none rounded-t-sm rounded border bg-transparent text-gray-100 py-2 px-3 h-10 w-full outline-0 border-gray-800/90 focus:shadow-none focus:border-gray-800/90"
                                                     placeholder="Email" name="email" required="" />
                                             </div>
                                         </div>
 
                                         <button type="submit" id="submitsubscribe" name="send"
-                                            class="isk-py-2 isk-px-5 isk-inline-block isk-font-semibold isk-tracking-wide isk-border isk-align-middle isk-transition isk-duration-500 isk-ease-in-out isk-text-base isk-text-center isk-bg-[#FFCDA3] isk-border-[#FFCDA3] isk-text-black isk-rounded-md">
+                                            class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-[#FFCDA3] border-[#FFCDA3] text-black rounded-md">
                                             Subscribe
                                         </button>
                                     </div>
