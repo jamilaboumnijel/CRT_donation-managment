@@ -28,6 +28,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column]
+    private ?string $tel = null;
+
+    #[ORM\Column]
+    private ?string $gender = null;
+
+    #[ORM\Column]
+    private ?string $birthday = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +97,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+    public function getTel(): ?string
+    {
+        return $this->tel;
+    }
+
+    public function setTel(string $tel): static
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): static
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+    public function getBirthday(): ?string
+    {
+        return $this->birthday;
+    }
+
+    public function setBirthday(string $birthday): static
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+
+
 
     /**
      * @see UserInterface

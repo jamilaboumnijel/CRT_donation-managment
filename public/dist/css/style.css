@@ -1,17 +1,33 @@
-i {
-    cursor: pointer;
+/* Titre du formulaire : Créer un nouvel utilisateur */
+.form-title {
+    font-weight: bold; /* Gras */
+    color:gray; /* Couleur gris */
+    margin-bottom: 20px; /* Espacement sous le titre */
+    font-size: 24px; /* Taille du texte */
+    text-align: center; /* Centrer le titre */
 }
-.dataTable-actions {
-    display: flex;
-    justify-content: space-around;
+
+/* Style pour les champs du formulaire */
+.form-control {
+    color: gray; /* Couleur du texte dans les champs en gris */
+    font-size: 16px; /* Taille du texte */
+    border: 1px solid #ccc; /* Bordure légère autour des champs */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 15px; /* Espacement en bas des champs */
+    width: 100%; /* Pour que les champs prennent toute la largeur */
+    box-sizing: border-box; /* Pour gérer les marges internes sans dépasser */
 }
-.bg-no-active {
-    background-color: rgba(255, 66, 127, 0.24);
+
+/* Pour les labels du formulaire */
+.form-group label {
+    color: black; /* Couleur des labels en noir */
+    font-weight: normal; /* Pas besoin de gras pour les labels */
+    display: block; /* Chaque label sur une ligne séparée */
+    margin-bottom: 5px; /* Espacement sous chaque label */
 }
-table td {
-    font-size: 14px !important;
-}
-table th {
-    font-size: 14px;
-    white-space: nowrap;
+
+/* Pour centrer le bouton */
+button[type="submit"] {
+    display: block;
+    margin: 0 auto; /* Centrer le bouton */
 }

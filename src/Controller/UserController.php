@@ -78,4 +78,22 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+   
+
+public function register(Request $request): Response
+{
+    $user = new User();
+    $form = $this->createForm(UserType::class, $user);
+
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+       
+    }
+
+    return $this->render('user/register.html.twig', [
+        'form' => $form->createView(), 
+    ]);
+}
+
 }
