@@ -46,7 +46,7 @@ class SecurityAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
-
+        // hedha el line elli ya3ml redirection :) 
         return new RedirectResponse($this->urlGenerator->generate('app_family_index'));
     }
 
